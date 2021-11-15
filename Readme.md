@@ -1,14 +1,15 @@
 Environment: 
-OS: Windows 10
-Meson: 0.60.1
-Ninja: 1.10.2
-Python: Python 3.8.2
+* OS: Windows 10
+* Meson: 0.60.1
+* Ninja: 1.10.2
+* Python: Python 3.8.2
+* Build type: Native
 
 Scenario: Using custom targets to generate protobuf messages. Generated code should be turned into reusable dependency that can be easily referenced by other targets. Furthermore generated protobuf headers should also be installed as they are part of the SDK API.
 
 Problem:
 
-The project will fail if more than one job is used during compilation. Ninja will compile sources depending on protobuf messages before actually running protoc and generating required code. This problem does not appear when generator is used instead of custom target.
+The project will fail if more than one job is used during compilation. Ninja will compile sources depending on protobuf messages before actually running protoc.exe and generating required code. This problem does not appear when generator is used instead of custom target.
 
 
 To reproduce:
