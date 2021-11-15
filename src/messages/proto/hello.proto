@@ -1,0 +1,6 @@
+syntax = "proto3";
+package meson.repro;
+
+message TestProto {
+    string foo = 1;
+}
